@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تعلم JavaScript كامل</title>
+  <style>
+    body {
+      font-family: "Tajawal", sans-serif;
+      background: #f9f9f9;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1 { color: #333; }
+    .example {
+      background: #fff;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 6px 15px;
+      margin: 5px 0;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background: #e91e63;
+      color: white;
+      font-weight: bold;
+    }
+    input {
+      padding: 5px;
+      margin: 5px 0;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📘 تعلم JavaScript كامل</h1>
+
+<!-- 1. alert, prompt, confirm -->
+<div class="example">
+  <h2>1️⃣ التنبيهات والإدخال</h2>
+  <button onclick="showAlert()">alert()</button>
+  <button onclick="askName()">prompt()</button>
+  <button onclick="confirmAction()">confirm()</button>
+  <p id="inputResult"></p>
+</div>
+
+<!-- 2. المتغيرات -->
+<div class="example">
+  <h2>2️⃣ المتغيرات</h2>
+  <pre>
+let name = "أحمد";
+const pi = 3.14;
+var age = 25;
+  </pre>
+  <button onclick="showVariables()">عرض المتغيرات في Console</button>
+</div>
+
+<!-- 3. الشروط -->
+<div class="example">
+  <h2>3️⃣ الشروط if/else</h2>
+  <input type="number" id="score" placeholder="اكتب الدرجة">
+  <button onclick="checkScore()">تحقق من النجاح</button>
+  <p id="scoreResult"></p>
+</div>
+
+<!-- 4. الحلقات -->
+<div class="example">
+  <h2>4️⃣ الحلقات loops</h2>
+  <button onclick="runLoop()">تشغيل حلقة for</button>
+  <pre id="loopResult"></pre>
+</div>
+
+<!-- 5. الدوال -->
+<div class="example">
+  <h2>5️⃣ الدوال Functions</h2>
+  <button onclick="greet('أحمد')">جرب دالة greet()</button>
+</div>
+
+<!-- 6. المصفوفات Arrays -->
+<div class="example">
+  <h2>6️⃣ المصفوفات Arrays</h2>
+  <pre id="arrayExample"></pre>
+  <button onclick="showArray()">عرض المصفوفة</button>
+</div>
+
+<!-- 7. الكائنات Objects -->
+<div class="example">
+  <h2>7️⃣ الكائنات Objects</h2>
+  <pre id="objectExample"></pre>
+  <button onclick="showObject()">عرض الكائن</button>
+</div>
+
+<!-- 8. DOM والتفاعل مع الصفحة -->
+<div class="example">
+  <h2>8️⃣ DOM والتفاعل مع الصفحة</h2>
+  <h3 id="domText">نص افتراضي</h3>
+  <button onclick="changeDOM()">تغيير النص</button>
+</div>
+
+<!-- 9. الأحداث Event Listeners -->
+<div class="example">
+  <h2>9️⃣ أحداث Event Listeners</h2>
+  <button id="eventBtn">اضغطني</button>
+  <p id="eventResult"></p>
+</div>
+
+<script>
+  // 1. alert, prompt, confirm
+  function showAlert() { alert("مرحبا بك!"); }
+  function askName() {
+    let name = prompt("ما اسمك؟");
+    document.getElementById("inputResult").innerHTML = "اسمك: " + name;
+  }
+  function confirmAction() {
+    let ok = confirm("هل تريد المتابعة؟");
+    document.getElementById("inputResult").innerHTML = ok ? "تابعت ✅" : "ألغيت ❌";
+  }
+
+  // 2. المتغيرات
+  function showVariables() {
+    let name = "أحمد";
+    const pi = 3.14;
+    var age = 25;
+    console.log("Name:", name, "Pi:", pi, "Age:", age);
+    alert("تم عرض المتغيرات في Console");
+  }
+
+  // 3. الشروط
+  function checkScore() {
+    let score = parseFloat(document.getElementById("score").value);
+    let result = score >= 50 ? "ناجح ✅" : "راسب ❌";
+    document.getElementById("scoreResult").innerHTML = result;
+  }
+
+  // 4. الحلقات
+  function runLoop() {
+    let text = "";
+    for(let i=1;i<=5;i++){
+      text += "العدد: " + i + "\n";
+    }
+    document.getElementById("loopResult").textContent = text;
+  }
+
+  // 5. الدوال
+  function greet(name){
+    alert("مرحبا " + name + "!");
+  }
+
+  // 6. المصفوفات
+  let fruits = ["تفاح","موز","كرز"];
+  function showArray(){
+    document.getElementById("arrayExample").textContent = "المصفوفة: " + fruits.join(", ");
+  }
+
+  // 7. الكائنات
+  let person = {name:"أحمد", age:25, city:"بغداد"};
+  function showObject(){
+    document.getElementById("objectExample").textContent = 
+      `الاسم: ${person.name}, العمر: ${person.age}, المدينة: ${person.city}`;
+  }
+
+  // 8. DOM
+  function changeDOM(){
+    document.getElementById("domText").innerHTML = "تم تغيير النص باستخدام JavaScript!";
+  }
+
+  // 9. الأحداث Event Listeners
+  document.getElementById("eventBtn").addEventListener("click", function(){
+    document.getElementById("eventResult").innerHTML = "تم الضغط على الزر!";
+  });
+</script>
+
+</body>
+</html>
