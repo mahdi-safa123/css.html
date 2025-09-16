@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أمثلة الدوال في CSS</title>
+  <style>
+    body {
+      font-family: "Tajawal", sans-serif;
+      background: #f9f9f9;
+      margin: 20px;
+      line-height: 1.8;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #333;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+    .example {
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .box {
+      width: 120px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📘 أمثلة جميع الدوال في CSS</h1>
+
+  <!-- 🎨 الألوان -->
+  <h2>🎨 دوال الألوان</h2>
+  <div class="example">
+    <div class="box" style="background: rgb(255,0,0);">rgb()</div>
+    <div class="box" style="background: rgba(0,0,255,0.5); color:#000;">rgba()</div>
+    <div class="box" style="background: hsl(200,100%,50%);">hsl()</div>
+    <div class="box" style="background: hsla(120,100%,40%,0.6);">hsla()</div>
+  </div>
+
+  <!-- 🌄 الصور والتدرجات -->
+  <h2>🌄 الصور والتدرجات</h2>
+  <div class="example">
+    <div class="box" style="background: url('https://picsum.photos/120/70?1'); color:#000;">url()</div>
+    <div class="box" style="background: linear-gradient(to right, red, blue);">linear</div>
+    <div class="box" style="background: radial-gradient(circle, red, yellow); color:#000;">radial</div>
+    <div class="box" style="background: conic-gradient(red, yellow, green);">conic</div>
+  </div>
+
+  <!-- ➗ الرياضيات -->
+  <h2>➗ دوال الرياضيات</h2>
+  <div class="example">
+    <div class="box" style="width: calc(80px + 40px); background: lightblue; color:#000;">calc()</div>
+    <div class="box" style="width: min(120px, 200px); background: lightgreen; color:#000;">min()</div>
+    <div class="box" style="width: max(150px, 50%); background: lightpink; color:#000;">max()</div>
+    <div class="box" style="width: clamp(100px, 20vw, 200px); background: lightsalmon; color:#000;">clamp()</div>
+  </div>
+
+  <!-- 🔄 التحويلات -->
+  <h2>🔄 دوال التحويلات (Transform)</h2>
+  <div class="example">
+    <div class="box" style="background: coral; transform: translate(20px,10px);">translate</div>
+    <div class="box" style="background: teal; transform: rotate(20deg);">rotate</div>
+    <div class="box" style="background: purple; transform: scale(1.3);">scale</div>
+    <div class="box" style="background: orange; transform: skew(15deg,5deg);">skew</div>
+    <div class="box" style="background: brown; transform: matrix(1, 0.2, 0.5, 1, 20, 10);">matrix</div>
+  </div>
+
+  <!-- 🎭 الفلاتر -->
+  <h2>🎭 دوال الفلاتر (Filter)</h2>
+  <div class="example">
+    <img src="https://picsum.photos/100?2" style="filter: blur(3px);" alt="blur">
+    <img src="https://picsum.photos/100?3" style="filter: brightness(150%);" alt="brightness">
+    <img src="https://picsum.photos/100?4" style="filter: contrast(200%);" alt="contrast">
+    <img src="https://picsum.photos/100?5" style="filter: grayscale(100%);" alt="grayscale">
+    <img src="https://picsum.photos/100?6" style="filter: sepia(100%);" alt="sepia">
+    <img src="https://picsum.photos/100?7" style="filter: hue-rotate(90deg);" alt="hue">
+    <img src="https://picsum.photos/100?8" style="filter: invert(100%);" alt="invert">
+    <img src="https://picsum.photos/100?9" style="filter: drop-shadow(5px 5px 5px gray);" alt="shadow">
+  </div>
+
+  <!-- 📝 النصوص والمتغيرات -->
+  <h2>📝 النصوص والمتغيرات</h2>
+  <style>
+    :root { --main-color: #e91e63; }
+    .var-example { color: var(--main-color); font-weight: bold; }
+  </style>
+  <div class="example">
+    <p title="من attr()">هذا نص <span style="content:attr(title);">attr()</span></p>
+    <p class="var-example">هذا نص باستخدام var()</p>
+  </div>
+
+  <!-- 📐 الأشكال -->
+  <h2>📐 دوال الأشكال (clip-path)</h2>
+  <div class="example">
+    <div class="box" style="background:red; clip-path: circle(50%);">circle</div>
+    <div class="box" style="background:green; clip-path: ellipse(60% 40%);">ellipse</div>
+    <div class="box" style="background:blue; clip-path: polygon(0 0, 100% 0, 50% 100%);">polygon</div>
+  </div>
+
+</body>
+</html>
